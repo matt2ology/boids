@@ -7,7 +7,7 @@ class Shape:
         self.size = size
         self.color = color
 
-    def draw(self, surface, position, velocity):
+    def draw(self, surface, position):
         equilateral_triangle_height: float = (math.sqrt(3)/2) * self.size
 
         x_pos, y_pos = position  # Unpack the position tuple
