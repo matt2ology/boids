@@ -66,10 +66,8 @@ if __name__ == '__main__':
                 running: bool = False
         screen.fill(WHITE)  # Fill the screen with white color (RGB)
         # Draw a red triangle on the screen
-        shape.draw(
-                screen,
-                pygame.Vector2(100, 100),
-                pygame.Vector2(100, 100)
-            )
+        obj = Triangle(5, RED).draw(screen, CENTER_OF_SCREEN)
+        print(obj)
+
         pygame.display.flip()  # Update the display with the new drawing
         clock.tick(30)
