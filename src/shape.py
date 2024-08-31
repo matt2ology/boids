@@ -3,7 +3,10 @@ import pygame
 
 
 class Shape:
-    def __init__(self, size, color):
+    """A class that represents a shape on the screen.
+    """
+
+    def __init__(self, size: int, color: tuple):
         self.size = size
         self.color = color
 
