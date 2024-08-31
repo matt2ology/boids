@@ -10,16 +10,42 @@ class Shape:
         self.size = size
         self.color = color
 
-    def draw(self, surface, position):
-        equilateral_triangle_height: float = (math.sqrt(3)/2) * self.size
 
+class Triangle(Shape):
+    """A class that represents a triangle on the screen. Inherits from Shape.
+
+    Args:
+        Shape (class): The base class for all shapes on the screen.
+    """
+
+    def draw(self, surface: pygame.Surface, position: tuple):
+        """Draws a triangle on the screen.
+
+        Args:
+            surface (pygame.Surface): The surface to draw the triangle on.
+            position (tuple): The position of the triangle on the screen.
+        """
         x_pos, y_pos = position  # Unpack the position tuple
-        front = (x_pos, y_pos - equilateral_triangle_height/2)
-        left = (x_pos - self.size/2, y_pos + equilateral_triangle_height/2)
-        right = (x_pos + self.size/2, y_pos + equilateral_triangle_height/2)
+
+        # Calculate the vertices of the triangle based on the position and size
+        front = (x_pos, y_pos - self.size)  # The front vertex
+        left = (x_pos - self.size, y_pos + self.size)
+        right = (x_pos + self.size, y_pos + self.size)
 
         # Draw the triangle
         pygame.draw.polygon(surface, self.color, [front, left, right])
+
+        # Draw a long line from the front vertex
+        pygame.draw.line(
+            surface,
+            self.color,
+            front,
+            (front[0], front[1] - self.size),  # The end point of the line
+            2  # The width of the line in pixels
+        )
+
+        def __str__(self) -> str:
+            return f"Triangle(size={self.size}, color={self.color})"
 
 
 # Stub to test the class that represents a shape on the screen
