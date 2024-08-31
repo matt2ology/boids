@@ -41,7 +41,7 @@ class Triangle(Shape):
             self.color,
             front,
             (front[0], front[1] - self.size),  # The end point of the line
-            2  # The width of the line in pixels
+            1  # The width of the line in pixels
         )
 
         def __str__(self) -> str:
