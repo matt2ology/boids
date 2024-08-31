@@ -54,11 +54,11 @@ if __name__ == '__main__':
     WIDTH: int = 600
     HEIGHT: int = 400
     screen: pygame.Surface = pygame.display.set_mode((WIDTH, HEIGHT))
+    CENTER_OF_SCREEN: tuple = (WIDTH//2, HEIGHT//2)
     WHITE: tuple = (255, 255, 255)
     RED: tuple = (255, 0, 0)
     clock: pygame.time.Clock = pygame.time.Clock()
     running: bool = True
-    shape = Shape(20, RED)
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
